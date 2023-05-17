@@ -1,16 +1,17 @@
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import CartWidget from '../CartWidget/CartWidget';
 import logo from './assets/logo-carita.png';
 import "../../styles/styles.css";
+import { Link, NavLink } from 'react-router-dom';
 
 const NavBar = () => {
     return (
         <Navbar className="bg-color" expand="lg">
       <Container>
-        <Navbar.Brand href="#home" className="txtNav-color">
+        <Link to='/'>
+        <Navbar.Brand className="txtNav-color">
         <img
               alt=""
               src={logo}
@@ -18,23 +19,15 @@ const NavBar = () => {
               height="30"
               className="d-inline-block align-top img-right"
             />
-            Oh Bonita Store</Navbar.Brand>
+            Oh Bonita Store</Navbar.Brand> </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#sucursales">Sucursales</Nav.Link>
-            <NavDropdown title="Categorías" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Skincare</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-              Make up
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Cuidado del cabello</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Ayuda
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link >Sucursales</Nav.Link>
+            <Nav.Link >Ayuda</Nav.Link>
+            <Nav.Link ><NavLink to={`/category/Skincare`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Skincare</NavLink></Nav.Link>
+            <Nav.Link ><NavLink to={`/category/Makeup`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Make up</NavLink></Nav.Link>
+            <Nav.Link ><NavLink to={`/category/CuidadoCapilar`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Cuidado Capilar</NavLink></Nav.Link>
           </Nav>
             <Nav>
              <CartWidget/>
