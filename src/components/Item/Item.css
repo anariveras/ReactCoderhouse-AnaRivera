@@ -1,17 +1,20 @@
 .CardItem{
     margin: 25px 15px 0 15px;
-    width: 328px;
-    height: 481px;
-    background-color: #78CCF0;
+    width: 340px;
+    height: auto;
+    background-color: #FFFFFF;
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.08);
-    border-radius: 24px;        
+    border-radius: 24px;
+    border-color: #c38bb6;
+    border-style: solid;        
 }
 
 .ItemHeader{
     font-family: cursive;
     margin: 15px 0 20px 0;
     font-weight: 600;
-    color: #FFFFFF;
+    color: #f599e0;
+    padding-top: 15px;
 }
 
 .ItemImg{
@@ -34,8 +37,8 @@
     display: inline-block;
     width: 100px;
     height: 30px;
-    background-color: #FFF2CC;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
         a:link {
